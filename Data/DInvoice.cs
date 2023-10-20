@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using Entity;
 namespace Data
 {
@@ -37,17 +38,16 @@ namespace Data
                                 // Leer los datos de cada fila
                                 Lista_invoices.Add(new invoices
                                 {
-                                    invoice_id = (int)reader["idproducto"],
-                                    customer_id = reader["nombreProducto"].ToString(),
-                                    date = (int)reader["idProveedor"],
-                                    total = (int)reader["idCategoria"],
+                                    invoice_id = (int)reader["invoice_id"],
+                                    customer_id = (int)reader["customer_id"],
+                                    date = (DateTime)reader["date"],
+                                    total = (decimal)reader["total"]
                                 });
 
                             }
                         }
                     }
                 }
-
                 // Cerrar la conexión
                 connection.Close();
             }

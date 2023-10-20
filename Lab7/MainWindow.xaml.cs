@@ -26,15 +26,13 @@ namespace Lab7
         {
             InitializeComponent();
         }
-        private void Button_Click_Buscar(object sender, RoutedEventArgs e)
+       
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             BInvoice business = new BInvoice();
-            List<invoices> Data = business.GetByDate(txtDate.Text);
-
-            Window window = new Window1();
-            window.Show();
-
+            List<invoices> Data = business.GetByDate(Convert.ToDateTime(txtDate.Text));
+            McDataGrid.ItemsSource = Data;
 
         }
     }

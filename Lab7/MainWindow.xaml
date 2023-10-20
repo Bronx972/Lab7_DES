@@ -12,7 +12,99 @@
         <TextBox x:Name="txtDate" HorizontalAlignment="Left" Margin="160,20,0,0" VerticalAlignment="Top" Width="300"/>
 
 
-        <Button Content="Buscar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Height="36" Margin="543,91,0,0" Click="Button_Click_Buscar"/>
+        
+        <Button Click="Button_Click"/>
+
+        <DataGrid Height="250" Width="730" HorizontalAlignment="Left" Margin="12,21,0,0" 
+          Name="McDataGrid" VerticalAlignment="Top" RowHeight="30" ColumnWidth="100" 
+                  ColumnHeaderHeight="100" HeadersVisibility="Column"
+                  Background="LightGray" RowBackground="LightYellow" 
+                    AlternatingRowBackground="LightBlue"
+                  BorderBrush="Gray" BorderThickness="5" AutoGenerateColumns="False"
+                  >
+
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn 
+                Header="Invoice ID"
+                Width="220"
+                Binding="{Binding invoice_id}" >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.EditingElementStyle>
+                        <Style TargetType="TextBox">
+                            <Setter Property="Foreground" Value="Blue"/>
+                        </Style>
+                    </DataGridTextColumn.EditingElementStyle>
+                </DataGridTextColumn>
+
+
+
+
+                <DataGridTextColumn 
+                Header="Customer Id"
+                Width="220"
+                Binding="{Binding customer_id}" >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.EditingElementStyle>
+                        <Style TargetType="TextBox">
+                            <Setter Property="Foreground" Value="Blue"/>
+                        </Style>
+                    </DataGridTextColumn.EditingElementStyle>
+                </DataGridTextColumn>
+
+
+
+                <DataGridTextColumn 
+                Header="Date"
+                Width="220"
+                Binding="{Binding date}" >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.EditingElementStyle>
+                        <Style TargetType="TextBox">
+                            <Setter Property="Foreground" Value="Blue"/>
+                        </Style>
+                    </DataGridTextColumn.EditingElementStyle>
+                </DataGridTextColumn>
+
+
+
+                <DataGridTextColumn 
+                Header="Total"
+                Width="220"
+                Binding="{Binding total}" >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.EditingElementStyle>
+                        <Style TargetType="TextBox">
+                            <Setter Property="Foreground" Value="Blue"/>
+                        </Style>
+                    </DataGridTextColumn.EditingElementStyle>
+                </DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+
+
+
+
+
+
 
         </DataGrid>
     </Grid>
